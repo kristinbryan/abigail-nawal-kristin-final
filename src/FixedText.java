@@ -1,13 +1,17 @@
 public class FixedText implements GameElement {
-    public String sentence; 
+    public String fixedText1 = ; 
 
-    public String fixedText() {
-        sentence = "Hello, my name is ";
-        return sentence;
+    public String fixedText(String string) {
+        return string;
     }
 
     public String getText() {
-        return fixedText();
+        return fixedText(fixedText1);
     }
+
+
+//STORY1ft1
+// fixedText1 = "WORLD'S SMARTEST"
+
 
 }
