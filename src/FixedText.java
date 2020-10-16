@@ -1,17 +1,14 @@
-public class FixedText implements GameElement {
-    public String fixedText1 = ; 
 
-    public String fixedText(String string) {
-        return string;
+public class FixedText implements MadLibElement {
+    public final String text;
+
+    public FixedText(String text) {
+        this.text = text;
     }
 
+    @Override
     public String getText() {
-        return fixedText(fixedText1);
+        return text;
     }
-
-
-//STORY1ft1
-// fixedText1 = "WORLD'S SMARTEST"
-
-
 }
+
