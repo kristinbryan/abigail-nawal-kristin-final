@@ -14,11 +14,11 @@ public class MadLib {
             new FixedText("GOES TO"),
             new Substitution("place")));
 
-        MadLib testMadLib1 = new MadLib(List.of(
-            new Substitution("person"),
-            new FixedText("enrolls in"),
-            new Substitution("class at a college"),
-            new FixedText("for credit")));
+        // MadLib testMadLib1 = new MadLib(List.of(
+        //     new Substitution("person"),
+        //     new FixedText("enrolls in"),
+        //     new Substitution("class at a college"),
+        //     new FixedText("for credit")));
     }
 }
         
