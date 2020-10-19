@@ -1,26 +1,56 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class MadLib {
-    private List<MadLibElement> elements;
+    private List<MadLibElement> elements, listOfSubstitutions;
+
 
     public MadLib(List<MadLibElement> elements) {
         this.elements = elements;
+        this.listOfSubstitutions = new ArrayList<MadLibElement>();
+
     }
 
-    public static void main(String[] args) {
+    public int getNumberOfSubstitutions(){
+
+
+        for (MadLibElement element : elements){
+
+            if (element instanceof Substitution){
+
+                listOfSubstitutions.add(element);
+
+            }
+        }
+
+        return listOfSubstitutions.size();
+    }
+
+ public static void main(String[] args) {
         MadLib testMadLib0 = new MadLib(List.of(
             new FixedText("worlds smartest"),
             new Substitution("noun"),
             new FixedText("GOES TO"),
             new Substitution("place")));
 
-        // MadLib testMadLib1 = new MadLib(List.of(
-        //     new Substitution("person"),
-        //     new FixedText("enrolls in"),
-        //     new Substitution("class at a college"),
-        //     new FixedText("for credit")));
+
+        System.out.println(testMadLib0.getNumberOfSubstitutions());
+
+
     }
+
 }
+
+
+
+   //     MadLib testMadLib1 = new MadLib(List.of(
+    //         new Substitution("person"),
+    //         new FixedText("enrolls in"),
+    //         new Substitution("class at a college"),
+    //         new FixedText("for credit")));
+
+
+
         
 // public List<String> createOutputOrSomethingWhoKnows() {
 //     List<String> result = new ArrayList<>();
