@@ -13,7 +13,6 @@ public class MadLib {
 
     public int getNumberOfSubstitutions(){
 
-
         for (MadLibElement element : elements){
 
             if (element instanceof Substitution){
@@ -25,6 +24,9 @@ public class MadLib {
 
         return listOfSubstitutions.size();
     }
+
+
+
 
  public static void main(String[] args) {
         MadLib testMadLib0 = new MadLib(List.of(
