@@ -14,10 +14,10 @@ public class Substitution implements MadLibElement {
 
     @Override
     public String getText() {
-        return setText(); 
+        return this.text; 
     }
 
-    public String setText() {
-        return text;
+    public void setText(String text) {
+        this.text = text;
     }
 }

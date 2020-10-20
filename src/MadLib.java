@@ -2,90 +2,78 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MadLib {
-    private List<MadLibElement> elements, listOfSubstitutions;
-
+    private List<MadLibElement> elements;
 
     public MadLib(List<MadLibElement> elements) {
         this.elements = elements;
-        this.listOfSubstitutions = new ArrayList<MadLibElement>();
-
     }
 
-    public int getNumberOfSubstitutions(){
+    public List<MadLibElement> getElements() {
+        return elements;
+    }
 
-        for (MadLibElement element : elements){
-
-            if (element instanceof Substitution){
-
-                listOfSubstitutions.add(element);
-
+    public List<Substitution> getSubstitutions() {
+        List<Substitution> listOfSubstitutions = new ArrayList<>();
+        for (MadLibElement element : elements) {
+            if (element instanceof Substitution) {
+                listOfSubstitutions.add((Substitution) element);
             }
         }
-
-        return listOfSubstitutions.size();
+        return listOfSubstitutions;
     }
 
-
-
-
- public static void main(String[] args) {
+    public static void main(String[] args) {
         MadLib testMadLib0 = new MadLib(List.of(
             new FixedText("worlds smartest"),
             new Substitution("noun"),
             new FixedText("GOES TO"),
             new Substitution("place")));
 
-
-        System.out.println(testMadLib0.getNumberOfSubstitutions());
-
-
+        System.out.println(testMadLib0.getSubstitutions());
     }
-
 }
 
 
-
-   //     MadLib testMadLib1 = new MadLib(List.of(
-    //         new Substitution("person"),
-    //         new FixedText("enrolls in"),
-    //         new Substitution("class at a college"),
-    //         new FixedText("for credit")));
-
+// MadLib testMadLib1 = new MadLib(List.of(
+// new Substitution("person"),
+// new FixedText("enrolls in"),
+// new Substitution("class at a college"),
+// new FixedText("for credit")));
 
 
-        
 // public List<String> createOutputOrSomethingWhoKnows() {
-//     List<String> result = new ArrayList<>();
-//     for (each game element) {
-//         result.add(output text from that element);
-//     }
-//     return result;
+// List<String> result = new ArrayList<>();
+// for (each game element) {
+// result.add(output text from that element);
+// }
+// return result;
 // }
 
 // Heart of the class that is/has a GraphicsGroup that lets you fill in the blanks:
 //
-//  for each element {
-//     if (someElementFromAMadLib instanceof Substitution) {
-//         Substitution subst = (Subsitution) someElementFromAMadLib;
-//         subst.getPrompt()  →  put this in a GraphicsText
-//         Make a TextField (I think that's the name?) that calls subst.setText(…) when it's changed
-//     }
+// for each element {
+// if (someElementFromAMadLib instanceof Substitution) {
+// Substitution subst = (Subsitution) someElementFromAMadLib;
+// subst.getPrompt() → put this in a GraphicsText
+// Make a TextField (I think that's the name?) that calls subst.setText(…) when it's changed
+// }
 // }
 
 
 // FAR (MAYBE NOT THIS TERM) FUTURE: "[person] enrolls in [class at a college] for credit"
 
-//fixedText
+// fixedText
 //
-// List<GameElements> Madlib = [ FixedText "WORLD'S SMARTEST", Substitution "[noun]", FixedText "GOES TO",  Substitution "[place]"]
+// List<GameElements> Madlib = [ FixedText "WORLD'S SMARTEST", Substitution "[noun]", FixedText
+// "GOES TO", Substitution "[place]"]
 //
-//for i in madlib if i == subsitution, repalce with input
+// for i in madlib if i == subsitution, repalce with input
 //
-// List <Strings> userInput = [] when the user inputs a string in the console, it is put in this list
+// List <Strings> userInput = [] when the user inputs a string in the console, it is put in this
+// list
 
 
-
-//TODO:
+// TODO:
 // make class for graphics groups
 
 // ok

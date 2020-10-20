@@ -4,13 +4,11 @@ import edu.macalester.graphics.CanvasWindow;
 import java.util.ArrayList;
 
 
-
+//Consider turning into a MadLibs selection class
 public class ButtonManager {
     
 CanvasWindow canvas;
     public int numberOfButtons;
-    
-
     private ArrayList<Button> listOfButtons;
 
 
@@ -31,11 +29,9 @@ CanvasWindow canvas;
 
             buttoni.setCenter(canvasWidth/2 , (i + 1 ) * canvasHeight/10);
 
-
             canvas.add(buttoni);
 
             // buttoni.onClick((click) -> call a method that removeobjects from the window then add texfeild manager which will allow us to type in the replacement values);
-
         }
     }
 

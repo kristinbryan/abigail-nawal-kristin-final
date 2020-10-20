@@ -1,4 +1,5 @@
 import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.ui.Button;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,15 +16,31 @@ public class MadLibProgram {
 
         // buttonManager.onclick(triggers which madLib to select depending on which is clicked)
 
-        MadLib testMadLib1 = new MadLib(List.of(
+        MadLib MadLib1 = new MadLib(List.of(
             new FixedText("worlds smartest"),
             new Substitution("noun"),
             new FixedText("GOES TO"),
             new Substitution("place")));
 
-        int madlib0Subs = testMadLib1.getNumberOfSubstitutions();
+        MadLib MadLib2 = new MadLib(List.of(
+            new FixedText("worlds smartest"),
+            new Substitution("noun"),
+            new FixedText("GOES TO"),
+            new Substitution("place")));   
 
-        TextFieldManager textManager = new TextFieldManager(madlib0Subs, canvas);
+        SubstitutionsInput substInput = new SubstitutionsInput(MadLib1, canvas.getHeight());
+        canvas.add(substInput);
+        substInput.setCenter(canvas.getCenter());
+
+
+        Button go = new Button("GO");
+        canvas.add(go, 400, 400);
+        go.onClick(() -> {
+            for (MadLibElement element : MadLib1.getElements()) {
+                System.out.print(element.getText() + " ");
+            }
+            System.out.println();
+        });
 
         // here we will repeat the process with new mad libs
 
