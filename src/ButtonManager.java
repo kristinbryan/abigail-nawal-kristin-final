@@ -11,8 +11,7 @@ CanvasWindow canvas;
     public int numberOfButtons;
     private ArrayList<Button> listOfButtons;
 
-
-    public ButtonManager(int numberOfButtons, CanvasWindow canvas){
+    public ButtonManager(int numberOfButtons, CanvasWindow canvas, String name){
 
         double canvasWidth = canvas.getWidth();
         double canvasHeight = canvas.getHeight();
@@ -23,7 +22,7 @@ CanvasWindow canvas;
 
         for (int i = 0; i <= numberOfButtons; i++){
 
-            listOfButtons.add(new Button("Button" + i));
+            listOfButtons.add(new Button(name));
 
             Button buttoni = listOfButtons.get(i);
 

@@ -1,46 +1,96 @@
 import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.ui.Button;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MadLibProgram {
+    public MadLib madLib1, madLib2;
+    public List<MadLib> madLibList = List.of(madLib1, madLib2);
 
+    private GraphicsText madLibName;
     public int numOfButtons;
 
-
     public MadLibProgram(CanvasWindow canvas) {
+        numOfButtons = 0; //increase with every MadLib added
 
-        numOfButtons = 1; //increase with every MadLib added
-
-        ButtonManager buttonManager = new ButtonManager(numOfButtons, canvas);
+        ButtonManager buttonManager = new ButtonManager(numOfButtons, canvas, getMadLibName());
 
         // buttonManager.onclick(triggers which madLib to select depending on which is clicked)
 
-        MadLib MadLib1 = new MadLib(List.of(
+        MadLib madLib1 = new MadLib(List.of(
             new FixedText("worlds smartest"),
             new Substitution("noun"),
-            new FixedText("GOES TO"),
+            new FixedText("goes to"),
             new Substitution("place")));
 
-        MadLib MadLib2 = new MadLib(List.of(
-            new FixedText("worlds smartest"),
+        MadLib madLib2 = new MadLib(List.of(
+            new FixedText("look! that"),
             new Substitution("noun"),
-            new FixedText("GOES TO"),
-            new Substitution("place")));   
+            new FixedText("is"),
+            new Substitution("verb")));   
 
-        SubstitutionsInput substInput = new SubstitutionsInput(MadLib1, canvas.getHeight());
+        System.out.println(madLibList);
+
+
+        SubstitutionsInput substInput = new SubstitutionsInput(madLib1, canvas.getHeight());
         canvas.add(substInput);
         substInput.setCenter(canvas.getCenter());
 
+        Button back = new Button("BACK");
 
+        // creates go button 
         Button go = new Button("GO");
-        canvas.add(go, 400, 400);
+        canvas.add(go, canvas.getWidth() * 0.8, canvas.getHeight() * 0.9); 
+
+        // when go is clicked, remove all from canvas and add the substitution screen
         go.onClick(() -> {
-            for (MadLibElement element : MadLib1.getElements()) {
+            canvas.removeAll();
+            madLibName.setCenter(canvas.getWidth() * 0.5, canvas.getHeight() * 0.05);
+            canvas.add(madLibName);
+
+
+            for (MadLibElement element : madLib1.getElements()) {
                 System.out.print(element.getText() + " ");
             }
             System.out.println();
         });
+        }
+        
+        public int getNumOfButtons() {
+            for (MadLib madLib : madLibList){
+                numOfButtons++;
+                return numOfButtons;
+            }
+            System.out.println(numOfButtons);
+
+            return numOfButtons;
+
+        }
+
+        public String getMadLibName() {
+            String name = new String();
+            for (MadLib madLib : madLibList) {
+                if (madLib == madLib1) {
+                    name += "MadLib 1";
+                }
+                if (madLib == madLib2) {
+                    name += "MadLib 2";
+                }
+            }
+            return name;
+        }
+
+        
+
+
+
+
+
+
+
+
+
 
         // here we will repeat the process with new mad libs
 
@@ -68,7 +118,6 @@ public class MadLibProgram {
         // FINAL RESULT: We will have a button that declares the changing finished
         //and when it is clicked, the mad lib will be displayed on the screen
 
-    }
 
 
     //AN ATTEMPT AT WHAT THE MAIN METHOD MIGHT LOOK LIKE
