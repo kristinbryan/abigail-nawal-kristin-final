@@ -1,7 +1,6 @@
 import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.ui.Button;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MadLibProgram {
@@ -34,6 +33,7 @@ public class MadLibProgram {
 
 
         SubstitutionsInput substInput = new SubstitutionsInput(madLib1, canvas.getHeight());
+        
         canvas.add(substInput);
         substInput.setCenter(canvas.getCenter());
 
@@ -49,7 +49,6 @@ public class MadLibProgram {
             madLibName.setCenter(canvas.getWidth() * 0.5, canvas.getHeight() * 0.05);
             canvas.add(madLibName);
 
-
             for (MadLibElement element : madLib1.getElements()) {
                 System.out.print(element.getText() + " ");
             }
@@ -57,6 +56,9 @@ public class MadLibProgram {
         });
         }
         
+    /**
+    * Adds a Button for each MadLib in the program
+    */
         public int getNumOfButtons() {
             for (MadLib madLib : madLibList){
                 numOfButtons++;
@@ -65,7 +67,6 @@ public class MadLibProgram {
             System.out.println(numOfButtons);
 
             return numOfButtons;
-
         }
 
         public String getMadLibName() {
@@ -81,21 +82,17 @@ public class MadLibProgram {
             return name;
         }
 
-        
-
-
-
-
-
-
-
-
-
 
         // here we will repeat the process with new mad libs
 
+        public static void main(String[] args) {
+            CanvasWindow canvas = new CanvasWindow("Mad Lib Game", 500, 500);
+            MadLibProgram madLibProgram = new MadLibProgram(canvas);
+        }
+       
 
-        // THE PROCESS: we ned to get the list from textfieldmanager 
+
+ // THE PROCESS: we ned to get the list from textfieldmanager 
         // textManager.listOfTextBoxes.get(1); 
         //and then individual text boxes (that are holding the updating textfeild text)
         //and then we will try and use that text to change the Substitution String to whatever the user has typed
@@ -117,12 +114,5 @@ public class MadLibProgram {
 
         // FINAL RESULT: We will have a button that declares the changing finished
         //and when it is clicked, the mad lib will be displayed on the screen
-
-
-
-    //AN ATTEMPT AT WHAT THE MAIN METHOD MIGHT LOOK LIKE
-    public static void main(String[] args) {
-        CanvasWindow canvas = new CanvasWindow("Mad Lib Game", 500, 500);
-        MadLibProgram madLibProgram = new MadLibProgram(canvas);
-    }
+    
 }

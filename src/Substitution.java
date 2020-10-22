@@ -1,4 +1,3 @@
-import edu.macalester.graphics.GraphicsGroup;
 
 //Substitution has a prompt (ex: celebrity) and text (ex: user unputs Taylor Swift)
 public class Substitution implements MadLibElement {

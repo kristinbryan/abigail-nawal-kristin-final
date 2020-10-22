@@ -1,12 +1,7 @@
 
 import edu.macalester.graphics.GraphicsGroup;
-import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.ui.TextField;
-
-//to talk about with group on Monday:
-//Should we make a UI interface that contains each UI element?
-//Change Title of Class to TextElements or another agreed upon item
 
 /**
  * Represents a list of a certain number of TestFeilds with corresponding Textboxes that hold their values
