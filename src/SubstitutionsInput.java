@@ -19,7 +19,7 @@ public class SubstitutionsInput extends GraphicsGroup {
             TextField substitutionText = new TextField();
             substitutionText.setText(substitution.getText());
 
-            prompt.setPosition(0, y);
+            prompt.setPosition(0, y + 15);
             substitutionText.setPosition(100, y);
 
             add(substitutionText);
