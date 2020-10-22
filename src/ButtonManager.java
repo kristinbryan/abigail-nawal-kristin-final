@@ -4,7 +4,7 @@ import edu.macalester.graphics.CanvasWindow;
 import java.util.ArrayList;
 
 
-    public class ButtonManager {
+public class ButtonManager {
     CanvasWindow canvas;
     public int numberOfButtons;
     private ArrayList<Button> listOfButtons;
@@ -30,10 +30,10 @@ import java.util.ArrayList;
         }
     }
 
-//  public static void main(String[] args) {
-//         CanvasWindow canvas = new CanvasWindow("madLibs", 500, 500);
+ public static void main(String[] args) {
+        CanvasWindow canvas = new CanvasWindow("madLibs", 500, 500);
 
-//         ButtonManager testButton = new ButtonManager(6, canvas);
-//     }
+        ButtonManager testButton = new ButtonManager(6, canvas);
+    }
 
 }
