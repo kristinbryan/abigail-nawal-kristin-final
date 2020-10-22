@@ -8,13 +8,15 @@ import java.util.List;
 
 public class MadLibProgram {
     private static final GraphicsText TITLE_TEXT = new GraphicsText("MADLIB GAME");
+    private static final Button GO_BUTTON = new Button("GO");
     public List<MadLib> madLibList;
     public MadLib currentMadLib;
 
     private CanvasWindow canvas;
-    private GraphicsText madLibName = new GraphicsText("test");
+    private GraphicsText madLibName = new GraphicsText("test"); // !! we have to change this so that it displays the chosen madlib name
     private String buttonName;
     private Button changeMadLib;
+    
     private double x;
 
     public MadLibProgram() {
@@ -36,7 +38,7 @@ public class MadLibProgram {
             new Substitution("adjective"),
             new FixedText("place with your"),
             new Substitution("adjective"),
-            new FixedText("family. Usually you go to some place that is near a/an"),
+            new FixedText("family. Usually you GO_BUTTON to some place that is near a/an"),
             new Substitution("noun"), 
             new FixedText("or up on a/an"), 
             new Substitution("noun"), 
@@ -44,13 +46,13 @@ public class MadLibProgram {
             new Substitution("plural noun"), 
             new FixedText("or play"), 
             new Substitution("game"), 
-            new FixedText("or go hunting for"), 
+            new FixedText("or GO_BUTTON hunting for"), 
             new Substitution("plural noun"),
             new FixedText(". I like to spend my time"), 
             new Substitution("-ing verb"), 
             new FixedText("or"), 
             new Substitution("-ing verb"), 
-            new FixedText("When parents go on a vacation, they spend their time eating three"), 
+            new FixedText("When parents GO_BUTTON on a vacation, they spend their time eating three"), 
             new Substitution("plural noun"), 
             new FixedText("a day, and fathers play golf, and mothers sit around"),
             new Substitution("-ing verb"), 
@@ -169,15 +171,10 @@ public class MadLibProgram {
         
         madLibList = List.of(madLib1, madLib2, madLib3);
         
-        
-
-        
-
         //creates SubstitutionsInput boxes
         SubstitutionsInput substInput = new SubstitutionsInput(madLib2, canvas.getHeight()/4);
         canvas.add(substInput);
         substInput.setCenter(canvas.getCenter());
-
 
         //creates back button
         Button back = new Button("BACK");
@@ -190,13 +187,12 @@ public class MadLibProgram {
 
         });
 
-        //creates go button
-        Button go = new Button("GO");
-        go.setCenter(canvas.getWidth() * 0.5, canvas.getHeight() * 0.9);
-        canvas.add(go); 
+        //creates GO_BUTTON button
+        GO_BUTTON.setCenter(canvas.getWidth() * 0.5, canvas.getHeight() * 0.9);
+        canvas.add(GO_BUTTON); 
 
-        // when go is clicked, remove all from canvas and add the substitution screen
-        go.onClick(() -> {
+        // when GO_BUTTON is clicked, remove all from canvas and add the substitution screen
+        GO_BUTTON.onClick(() -> {
             canvas.removeAll();
             madLibName.setCenter(canvas.getWidth() * 0.5, canvas.getHeight() * 0.05);
             canvas.add(madLibName);
@@ -237,6 +233,7 @@ public class MadLibProgram {
 
         public void buildHomeScreen() {
             canvas.add(TITLE_TEXT);
+            canvas.add(GO_BUTTON);
             x = 100;
             for (MadLib m : madLibList) {
             addMadLibButton(m, x);
