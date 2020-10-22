@@ -13,6 +13,7 @@ public class MadLibProgram {
     private String buttonName;
     private Button changeMadLib;
     private SubstitutionsInput substInput;
+    private GraphicsText completedMadLib = new GraphicsText();
 
     private double x;
 
@@ -71,7 +72,9 @@ public class MadLibProgram {
 
         madLibName.setCenter(canvas.getWidth() * 0.5, canvas.getHeight() * 0.05);
         canvas.add(madLibName);
-
+        completedMadLib.setText(currentMadLib.getText());
+        completedMadLib.setCenter(canvas.getCenter());
+        canvas.add(completedMadLib);
         Button playAgain = new Button("PLAY AGAIN");
         playAgain.onClick(() -> {
             canvas.removeAll();
@@ -79,6 +82,8 @@ public class MadLibProgram {
             buildHomeScreen();
         });
         canvas.add(playAgain);
+
+    
 
         // Take this:
         // for (MadLibElement element : currentMadLib.getElements()) {

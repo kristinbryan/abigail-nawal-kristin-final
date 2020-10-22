@@ -23,9 +23,13 @@ public class MadLib {
 
 
     public String getText(){
-        
-        return "";
-    }
+        String madLibString = new String();
+        for (MadLibElement element : elements) {
+            madLibString += element.getText() + " ";
+        }
+        return madLibString;
+
+  }
 
     /**
      *Takes the list of elements and returns a new list including every item that is a Substitution
@@ -39,4 +43,21 @@ public class MadLib {
         }
         return listOfSubstitutions;
     }
+
+    public static void main(String[] args) {
+        MadLib test = new MadLib("hello", List.of(
+            new FixedText("A vacation is when you take a trip to some"),
+            new Substitution("adjective"),
+            new FixedText("place with your"),
+            new Substitution("adjective"),
+            new FixedText("family. Usually you go to some place that is near a/an"),
+            new Substitution("noun"), 
+            new FixedText("or up on a/an"), 
+            new Substitution("noun"), 
+            new FixedText(". A good vacation place is one where you can ride"), 
+            new Substitution("plural noun")));
+
+            System.out.println(test.getText());
+    }
+
 }

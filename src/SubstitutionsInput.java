@@ -28,9 +28,9 @@ public class SubstitutionsInput extends GraphicsGroup {
             add(prompt);
 
             substitutionText.onChange(text -> substitution.setText(text));
-            if (text = null) {
-                substitutionText.setBackground(Color.RED);
-            }
+            // if (text = null) {
+            //     substitutionText.setBackground(Color.RED);
+            // }
             // onChange: set fill color of prompt depending on whether text is blank (use text.isBlank())
             y += totalHeight / 10;
         }
