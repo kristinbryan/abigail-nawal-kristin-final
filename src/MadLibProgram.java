@@ -15,7 +15,17 @@ public class MadLibProgram {
     private Button changeMadLib;
 
     public MadLibProgram() {
+<<<<<<< HEAD
         canvas = new CanvasWindow("Mad Lib Game", 500, 500);
+=======
+        canvas = new CanvasWindow("Mad Lib Game", 500, 1000);
+
+        GraphicsText titleText = new GraphicsText("MADLIB GAME");
+        titleText.setCenter(200, 50);
+        titleText.setFont(FontStyle.BOLD, 30);
+        canvas.add(titleText);
+
+>>>>>>> 1941f31c8f5fdd865e242a23090d46d74cf93d06
         // ButtonManager buttonManager = new ButtonManager(2, canvas, "test");
 
         // buttonManager.onclick(triggers which madLib to select depending on which is clicked)
@@ -32,32 +42,32 @@ public class MadLibProgram {
             new FixedText("family. Usually you go to some place that is near a/an"),
             new Substitution("noun"), 
             new FixedText("or up on a/an"), 
-            new Substitution("noun (followed by a period)"), 
-            new FixedText("A good vacation place is one where you can ride"), 
+            new Substitution("noun"), 
+            new FixedText(". A good vacation place is one where you can ride"), 
             new Substitution("plural noun"), 
             new FixedText("or play"), 
             new Substitution("game"), 
             new FixedText("or go hunting for"), 
-            new Substitution("plural noun (followed by a period)"),
-            new FixedText("I like to spend muy time"), 
-            new Substitution("verb ending in -ing"), 
+            new Substitution("plural noun"),
+            new FixedText(". I like to spend my time"), 
+            new Substitution("-ing verb"), 
             new FixedText("or"), 
-            new Substitution("verb ending in -ing"), 
+            new Substitution("-ing verb"), 
             new FixedText("When parents go on a vacation, they spend their time eating three"), 
             new Substitution("plural noun"), 
             new FixedText("a day, and fathers play golf, and mothers sit around"),
-            new Substitution("verb ending in -ing (followed by a period)"), 
-            new FixedText("Last summer, my little brother fell in a/an"), 
+            new Substitution("-ing verb"), 
+            new FixedText(". Last summer, my little brother fell in a/an"), 
             new Substitution("noun"), 
             new FixedText("and got poison"), 
             new Substitution("plant"),
             new FixedText("all over his"),
-            new Substitution("part of the body (followed by a period"),
-            new FixedText("My family is going to (the)"), 
-            new Substitution("place (followed by a comma)"), 
-            new FixedText("and I will practice"),
-            new Substitution("verb ending in -ing (followed by a period)"), 
-            new FixedText("Parents need vacations more than kids because parents are always very"),
+            new Substitution("body part"),
+            new FixedText(". My family is going to (the)"), 
+            new Substitution("place "), 
+            new FixedText(". and I will practice"),
+            new Substitution("-ing verb"), 
+            new FixedText(". arents need vacations more than kids because parents are always very"),
             new Substitution("adjective"),
             new FixedText("and because they haveto work"),
             new Substitution("number"),
@@ -131,7 +141,7 @@ public class MadLibProgram {
         
 
         //creates SubstitutionsInput boxes
-        SubstitutionsInput substInput = new SubstitutionsInput(madLib1, canvas.getHeight());
+        SubstitutionsInput substInput = new SubstitutionsInput(madLib1, canvas.getHeight()/3);
         canvas.add(substInput);
         substInput.setCenter(canvas.getCenter());
 
@@ -141,7 +151,7 @@ public class MadLibProgram {
 
         //creates go button
         Button go = new Button("GO");
-        canvas.add(go, canvas.getWidth() * 0.8, canvas.getHeight() * 0.9); 
+        canvas.add(go, canvas.getWidth() * 0.8, canvas.getHeight() * 0.8); 
 
         // when go is clicked, remove all from canvas and add the substitution screen
         go.onClick(() -> {
@@ -174,7 +184,7 @@ public class MadLibProgram {
         public void addMadLibButton(MadLib madLib, double y) {
             buttonName = getTitle(madLib);
             changeMadLib = new Button(buttonName);
-            changeMadLib.setCenter(100, y);
+            changeMadLib.setCenter(67, y);
             changeMadLib.onClick(() -> currentMadLib = madLib);
             canvas.add(changeMadLib);
 
