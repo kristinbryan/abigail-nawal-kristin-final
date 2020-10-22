@@ -21,6 +21,12 @@ public class MadLib {
         return elements;
     }
 
+
+    public String getText(){
+        
+        return "";
+    }
+
     /**
      *Takes the list of elements and returns a new list including every item that is a Substitution
     */

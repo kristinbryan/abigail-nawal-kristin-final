@@ -80,10 +80,12 @@ public class MadLibProgram {
         });
         canvas.add(playAgain);
 
-        for (MadLibElement element : currentMadLib.getElements()) {
-            System.out.print(element.getText() + " ");
-        }
-        System.out.println();
+        // Take this:
+        // for (MadLibElement element : currentMadLib.getElements()) {
+        //     System.out.print(element.getText() + " ");
+        // }
+        //...and make it a method of MadLib that returns a single String so that you can do this instead:
+        // System.out.println(madLib.getText);
     }
 
     public static void main(String[] args) {
