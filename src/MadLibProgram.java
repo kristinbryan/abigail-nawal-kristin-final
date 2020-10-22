@@ -1,10 +1,9 @@
 import edu.macalester.graphics.CanvasWindow;
-import edu.macalester.graphics.FontStyle;
 import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.ui.Button;
+import jdk.internal.net.http.common.SubscriberWrapper;
 
 import java.util.List;
-import java.awt.Color;
 
 public class MadLibProgram {
     public List<MadLib> madLibList;
@@ -17,18 +16,14 @@ public class MadLibProgram {
 
     public MadLibProgram() {
         canvas = new CanvasWindow("Mad Lib Game", 500, 500);
-
-        GraphicsText titleText = new GraphicsText("MADLIB GAME");
-        titleText.setCenter(200, 25);
-        titleText.setFont(FontStyle.BOLD, 30);
-        canvas.add(titleText);
-
         // ButtonManager buttonManager = new ButtonManager(2, canvas, "test");
 
         // buttonManager.onclick(triggers which madLib to select depending on which is clicked)
 
 
         //Sets up madLibs
+
+        // From VACATION FUN MAD LIBS® • Copyright © 1988 by Price Stern Sloan, a division of Penguin Putnam Books for Young Readers, New York.
         MadLib madLib1 = new MadLib(List.of(
             new FixedText("A vacation is when you take a trip to some"),
             new Substitution("adjective"),
@@ -71,10 +66,56 @@ public class MadLibProgram {
             new FixedText("to pay for the vacation.")));
 
         MadLib madLib2 = new MadLib(List.of(
-            new FixedText("look! that"),
+            new FixedText("My"),
+            new Substitution("adjective"),
+            new FixedText("darling, I love you more than"),
+            new Substitution("noun"), 
+            new FixedText("itself. Each minute away from you is a/an"),
             new Substitution("noun"),
-            new FixedText("is"),
-            new Substitution("verb")));   
+            new FixedText("each hour a/an"),
+            new Substitution("adjective"),
+            new FixedText("eternity. Without you, life if dull, doring, and"),
+            new Substitution("adjective"),
+            new FixedText("I feel like a baby without my"),
+            new Substitution("noun"),
+            new FixedText(", a toddle without my teddy"),
+            new Substitution("noun"),
+            new FixedText(", a dog without its"),
+            new Substitution("noun"),
+            new FixedText(". I can't get you out of my"),
+            new Substitution("part of the body"),
+            new FixedText(". I can't stop thinking about the color of your"),
+            new Substitution("noun"),
+            new FixedText(", the way you wear your"),
+            new Substitution("noun"), 
+            new FixedText(", the way you toss your"),
+            new Substitution("noun"),
+            new FixedText(", your"),
+            new Substitution("adjective"),
+            new FixedText("laugh, they way you"),
+            new Substitution("verb"),
+            new FixedText("a joke. This morning, when the mail"),
+            new Substitution("noun"),
+            new FixedText("brought your special delivery"),
+            new Substitution("plural noun"),
+            new FixedText(", my"),
+            new Substitution("part of the body"),
+            new FixedText("skipped a beat, my"), 
+            new Substitution("part of the body"), 
+            new FixedText("was in my throat, and my"),
+            new Substitution("noun"),
+            new FixedText("trembled so much, I could hardly"),
+            new Substitution("verb"),
+            new FixedText("your"),
+            new Substitution("noun"),
+            new FixedText(". What you said set my"),
+            new Substitution("noun"),
+            new FixedText("on fire. Do write again. Until then, I love you from the bottom of my"),
+            new Substitution("part of the body"),
+            new FixedText(". I will"),
+            new Substitution("verb"), 
+            new FixedText("you always, "), 
+            new Substitution("your name")));   
         
             madLibList = List.of(madLib1, madLib2);
 
@@ -119,10 +160,10 @@ public class MadLibProgram {
             String title = new String();
             for (MadLib m : madLibList) {
                 if (madLib == madLibList.get(0)) {
-                    title += "MadLib 1";
+                    title += "Vacation Fun";
                 }
                 if (madLib == madLibList.get(1)) {
-                    title += "MadLib 2";
+                    title += "Love Letter";
                 }
             }
             return title; 
