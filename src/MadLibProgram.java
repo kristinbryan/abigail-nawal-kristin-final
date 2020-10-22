@@ -1,7 +1,10 @@
 import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.FontStyle;
 import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.ui.Button;
+
 import java.util.List;
+import java.awt.Color;
 
 public class MadLibProgram {
     public List<MadLib> madLibList;
@@ -14,6 +17,12 @@ public class MadLibProgram {
 
     public MadLibProgram() {
         canvas = new CanvasWindow("Mad Lib Game", 500, 500);
+
+        GraphicsText titleText = new GraphicsText("MADLIB GAME");
+        titleText.setCenter(200, 25);
+        titleText.setFont(FontStyle.BOLD, 30);
+        canvas.add(titleText);
+
         // ButtonManager buttonManager = new ButtonManager(2, canvas, "test");
 
         // buttonManager.onclick(triggers which madLib to select depending on which is clicked)
