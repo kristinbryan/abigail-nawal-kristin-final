@@ -6,9 +6,6 @@ public class FixedText implements MadLibElement {
         this.text = text;
     }
 
-/**
- * Gets the text from the FixedText
- */
     @Override
     public String getText() {
         return text;

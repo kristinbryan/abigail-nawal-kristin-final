@@ -2,22 +2,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MadLib {
+    private String title;
     private List<MadLibElement> elements;
 
-    public MadLib(List<MadLibElement> elements) {
+    public MadLib(String title, List<MadLibElement> elements) {
+        this.title = title;
         this.elements = elements;
     }
 
-/**
- * Returns a list od the MadLibElements in the list elements
- */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * Returns a list of the MadLibElements in the list elements
+     */
     public List<MadLibElement> getElements() {
         return elements;
     }
 
-/**
- *Takes the list of elements and returns a new list including every item that is a Substitution
- */
+    /**
+     *Takes the list of elements and returns a new list including every item that is a Substitution
+    */
     public List<Substitution> getSubstitutions() {
         List<Substitution> listOfSubstitutions = new ArrayList<>();
         for (MadLibElement element : elements) {
@@ -27,17 +33,4 @@ public class MadLib {
         }
         return listOfSubstitutions;
     }
-
-    // public String getTitle(MadLib madLib, List<MadLib> list) {
-    //     for (MadLib m : list) {
-    //         if (madLib instanceof m)
-    //     }
-    //     if (madLib == ) {
-
-    //     }
-    //     return "test";
-    // }
-
 }
-
-
