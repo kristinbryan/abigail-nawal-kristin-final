@@ -4,21 +4,17 @@ import edu.macalester.graphics.CanvasWindow;
 import java.util.ArrayList;
 
 
-//Consider turning into a MadLibs selection class
-public class ButtonManager {
-    
-CanvasWindow canvas;
+    public class ButtonManager {
+    CanvasWindow canvas;
     public int numberOfButtons;
     private ArrayList<Button> listOfButtons;
 
     public ButtonManager(int numberOfButtons, CanvasWindow canvas, String name){
-
         double canvasWidth = canvas.getWidth();
         double canvasHeight = canvas.getHeight();
 
         this.numberOfButtons = numberOfButtons;
         this.listOfButtons = new ArrayList<Button>();
-
 
         for (int i = 0; i <= numberOfButtons; i++){
 

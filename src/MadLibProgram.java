@@ -17,6 +17,8 @@ public class MadLibProgram {
 
         // buttonManager.onclick(triggers which madLib to select depending on which is clicked)
 
+
+        //Sets up madLibs
         MadLib madLib1 = new MadLib(List.of(
             new FixedText("worlds smartest"),
             new Substitution("noun"),
@@ -28,18 +30,21 @@ public class MadLibProgram {
             new Substitution("noun"),
             new FixedText("is"),
             new Substitution("verb")));   
-
-        System.out.println(madLibList);
-
-
-        SubstitutionsInput substInput = new SubstitutionsInput(madLib1, canvas.getHeight());
         
+            madLibList = List.of(madLib1, madLib2);
+
+            System.out.println(madLibList);
+
+        //creates SubstitutionsInput boxes
+        SubstitutionsInput substInput = new SubstitutionsInput(madLib1, canvas.getHeight());
         canvas.add(substInput);
         substInput.setCenter(canvas.getCenter());
 
+
+        //creates back button
         Button back = new Button("BACK");
 
-        // creates go button 
+        //creates go button
         Button go = new Button("GO");
         canvas.add(go, canvas.getWidth() * 0.8, canvas.getHeight() * 0.9); 
 
@@ -56,9 +61,9 @@ public class MadLibProgram {
         });
         }
         
-    /**
-    * Adds a Button for each MadLib in the program
-    */
+        /**
+        * Adds a Button for each MadLib in the program
+        */
         public int getNumOfButtons() {
             for (MadLib madLib : madLibList){
                 numOfButtons++;
@@ -69,6 +74,9 @@ public class MadLibProgram {
             return numOfButtons;
         }
 
+        /**
+        * creates a name for each MadLib
+        */
         public String getMadLibName() {
             String name = new String();
             for (MadLib madLib : madLibList) {
