@@ -9,6 +9,8 @@ public class ButtonManager {
     public int numberOfButtons;
     private ArrayList<Button> listOfButtons;
 
+    /* this class creates the buttons the allow the user to pick a madlib */
+
     public ButtonManager(int numberOfButtons, CanvasWindow canvas, String name){
         double canvasWidth = canvas.getWidth();
         double canvasHeight = canvas.getHeight();
@@ -33,7 +35,7 @@ public class ButtonManager {
  public static void main(String[] args) {
         CanvasWindow canvas = new CanvasWindow("madLibs", 500, 500);
 
-        ButtonManager testButton = new ButtonManager(6, canvas);
+        ButtonManager testButton = new ButtonManager(6, canvas, "button");
     }
 
 }

@@ -28,6 +28,16 @@ public class MadLib {
         return listOfSubstitutions;
     }
 
+    // public String getTitle(MadLib madLib, List<MadLib> list) {
+    //     for (MadLib m : list) {
+    //         if (madLib instanceof m)
+    //     }
+    //     if (madLib == ) {
+
+    //     }
+    //     return "test";
+    // }
+
 }
 
 

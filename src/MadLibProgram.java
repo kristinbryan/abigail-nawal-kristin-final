@@ -4,16 +4,17 @@ import edu.macalester.graphics.ui.Button;
 import java.util.List;
 
 public class MadLibProgram {
-    public MadLib madLib1, madLib2;
-    public List<MadLib> madLibList = List.of(madLib1, madLib2);
+    public List<MadLib> madLibList;
+    public MadLib currentMadLib;
 
+    private CanvasWindow canvas;
     private GraphicsText madLibName;
-    public int numOfButtons;
+    private String buttonName;
+    private Button changeMadLib;
 
-    public MadLibProgram(CanvasWindow canvas) {
-        numOfButtons = 0; //increase with every MadLib added
-
-        ButtonManager buttonManager = new ButtonManager(numOfButtons, canvas, getMadLibName());
+    public MadLibProgram() {
+        canvas = new CanvasWindow("Mad Lib Game", 500, 500);
+        // ButtonManager buttonManager = new ButtonManager(2, canvas, "test");
 
         // buttonManager.onclick(triggers which madLib to select depending on which is clicked)
 
@@ -34,6 +35,15 @@ public class MadLibProgram {
             madLibList = List.of(madLib1, madLib2);
 
             System.out.println(madLibList);
+
+
+        double y = 100;
+        for (MadLib m : madLibList) {
+            y += 25;
+            addMadLibButton(m, y);
+        }
+
+        
 
         //creates SubstitutionsInput boxes
         SubstitutionsInput substInput = new SubstitutionsInput(madLib1, canvas.getHeight());
@@ -61,42 +71,37 @@ public class MadLibProgram {
         });
         }
         
-        /**
-        * Adds a Button for each MadLib in the program
-        */
-        public int getNumOfButtons() {
-            for (MadLib madLib : madLibList){
-                numOfButtons++;
-                return numOfButtons;
-            }
-            System.out.println(numOfButtons);
-
-            return numOfButtons;
-        }
-
-        /**
-        * creates a name for each MadLib
-        */
-        public String getMadLibName() {
-            String name = new String();
-            for (MadLib madLib : madLibList) {
-                if (madLib == madLib1) {
-                    name += "MadLib 1";
+        public String getTitle(MadLib madLib) {
+            String title = new String();
+            for (MadLib m : madLibList) {
+                if (madLib == madLibList.get(0)) {
+                    title += "MadLib 1";
                 }
-                if (madLib == madLib2) {
-                    name += "MadLib 2";
+                if (madLib == madLibList.get(1)) {
+                    title += "MadLib 2";
                 }
             }
-            return name;
+            return title; 
         }
 
+        /* adds button for each MadLib option */
+
+        public void addMadLibButton(MadLib madLib, double y) {
+            buttonName = getTitle(madLib);
+            changeMadLib = new Button(buttonName);
+            changeMadLib.setCenter(100, y);
+            changeMadLib.onClick(() -> currentMadLib = madLib);
+            canvas.add(changeMadLib);
+
+        }
+        
 
         // here we will repeat the process with new mad libs
 
         public static void main(String[] args) {
-            CanvasWindow canvas = new CanvasWindow("Mad Lib Game", 500, 500);
-            MadLibProgram madLibProgram = new MadLibProgram(canvas);
+            new MadLibProgram();
         }
+
        
 
 
