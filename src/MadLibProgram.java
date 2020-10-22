@@ -1,7 +1,8 @@
 import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.FontStyle;
 import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.ui.Button;
-import jdk.internal.net.http.common.SubscriberWrapper;
+
 
 import java.util.List;
 
@@ -13,11 +14,9 @@ public class MadLibProgram {
     private GraphicsText madLibName;
     private String buttonName;
     private Button changeMadLib;
+    private double x;
 
     public MadLibProgram() {
-<<<<<<< HEAD
-        canvas = new CanvasWindow("Mad Lib Game", 500, 500);
-=======
         canvas = new CanvasWindow("Mad Lib Game", 500, 1000);
 
         GraphicsText titleText = new GraphicsText("MADLIB GAME");
@@ -25,7 +24,6 @@ public class MadLibProgram {
         titleText.setFont(FontStyle.BOLD, 30);
         canvas.add(titleText);
 
->>>>>>> 1941f31c8f5fdd865e242a23090d46d74cf93d06
         // ButtonManager buttonManager = new ButtonManager(2, canvas, "test");
 
         // buttonManager.onclick(triggers which madLib to select depending on which is clicked)
@@ -126,16 +124,55 @@ public class MadLibProgram {
             new Substitution("verb"), 
             new FixedText("you always, "), 
             new Substitution("your name")));   
+
+        MadLib madLib3 = new MadLib((List.of(
+            new FixedText("When we look up into the sky on a/an"),
+            new Substitution("adjective"),
+            new FixedText("summer night, we see millions of tiny spots of light. Each one represents a/an"),
+            new Substitution("noun"), 
+            new FixedText("which is the center of a/an"),
+            new Substitution("adjective"),
+            new FixedText("solar system with dozens of"),
+            new Substitution("plural noun"),
+            new FixedText("reolving"),
+            new Substitution("adjective"),
+            new FixedText("around a distant sun. Sometimes these suns expand and begin"), 
+            new Substitution("-ing verb"),
+            new FixedText("their neighbors. Soon they will become so big, they will turn into"),
+            new Substitution("silly word (plural)"),
+            new FixedText(". Eventually they subside and become"),
+            new Substitution("adjective"),
+            new FixedText("giants or perhaps black"),
+            new Substitution("plural noun"),
+            new FixedText(". Our own planet, which we call"),
+            new Substitution("first name"), 
+            new FixedText(", circles around our"),
+            new Substitution("adjective"),
+            new FixedText("sun"), 
+            new Substitution("number"), 
+            new FixedText("times every year. There are eight other planets in our solar system. They are named"),
+            new Substitution("another first name"),
+            new FixedText(", "),
+            new Substitution("another first name"),
+            new FixedText(", "),
+            new Substitution("another first name"),
+            new FixedText(", "),
+            new Substitution("another first name"),
+            new FixedText(", "),
+            new Substitution("another first name"),
+            new FixedText(", "),
+            new Substitution("another first name"),
+            new FixedText(", Jupiter, and Mars. Scientists who study these planets are called"),
+            new Substitution("plural noun"),
+            new FixedText("."))));
         
-            madLibList = List.of(madLib1, madLib2);
-
-            System.out.println(madLibList);
-
-
-        double y = 100;
+        madLibList = List.of(madLib1, madLib2, madLib3);
+        
+        x = 100;
         for (MadLib m : madLibList) {
-            y += 25;
-            addMadLibButton(m, y);
+            addMadLibButton(m, x);
+            x += 150;
+            
         }
 
         
@@ -168,23 +205,25 @@ public class MadLibProgram {
         
         public String getTitle(MadLib madLib) {
             String title = new String();
-            for (MadLib m : madLibList) {
-                if (madLib == madLibList.get(0)) {
-                    title += "Vacation Fun";
-                }
-                if (madLib == madLibList.get(1)) {
-                    title += "Love Letter";
-                }
+            if (madLib == madLibList.get(0)) {
+                title += "Vacation Fun";
             }
+            if (madLib == madLibList.get(1)) {                    
+                title += "Love Letter";
+            }
+            if (madLib == madLibList.get(2)) {                    
+                title += "Our Solar System";
+            }
+
             return title; 
         }
 
         /* adds button for each MadLib option */
 
-        public void addMadLibButton(MadLib madLib, double y) {
+        public void addMadLibButton(MadLib madLib, double x) {
             buttonName = getTitle(madLib);
             changeMadLib = new Button(buttonName);
-            changeMadLib.setCenter(67, y);
+            changeMadLib.setCenter(x, 100);
             changeMadLib.onClick(() -> currentMadLib = madLib);
             canvas.add(changeMadLib);
 
