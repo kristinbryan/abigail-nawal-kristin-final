@@ -73,6 +73,7 @@ public class MadLibProgram {
             new Substitution("plural noun"),
             new FixedText("to pay for the vacation.")));
 
+        // From MAD, MAD, MAD LIBS® • Copyright © 1998 by Price Stern Sloan, a division of Penguin Putnam Books for Young Readers, New York.
         MadLib madLib2 = new MadLib(List.of(
             new FixedText("My"),
             new Substitution("adjective"),
@@ -91,7 +92,7 @@ public class MadLibProgram {
             new FixedText(", a dog without its"),
             new Substitution("noun"),
             new FixedText(". I can't get you out of my"),
-            new Substitution("part of the body"),
+            new Substitution("body part"),
             new FixedText(". I can't stop thinking about the color of your"),
             new Substitution("noun"),
             new FixedText(", the way you wear your"),
@@ -107,9 +108,9 @@ public class MadLibProgram {
             new FixedText("brought your special delivery"),
             new Substitution("plural noun"),
             new FixedText(", my"),
-            new Substitution("part of the body"),
+            new Substitution("body part"),
             new FixedText("skipped a beat, my"), 
-            new Substitution("part of the body"), 
+            new Substitution("body part"), 
             new FixedText("was in my throat, and my"),
             new Substitution("noun"),
             new FixedText("trembled so much, I could hardly"),
@@ -119,12 +120,13 @@ public class MadLibProgram {
             new FixedText(". What you said set my"),
             new Substitution("noun"),
             new FixedText("on fire. Do write again. Until then, I love you from the bottom of my"),
-            new Substitution("part of the body"),
+            new Substitution("body part"),
             new FixedText(". I will"),
             new Substitution("verb"), 
             new FixedText("you always, "), 
             new Substitution("your name")));   
 
+        // From MAD LIBS® FROM OUTER SPACE • Copyright © 1989 by Price Stern Sloan, a division of Penguin Putnam Books for Young Readers, New York.
         MadLib madLib3 = new MadLib((List.of(
             new FixedText("When we look up into the sky on a/an"),
             new Substitution("adjective"),
@@ -151,17 +153,17 @@ public class MadLibProgram {
             new FixedText("sun"), 
             new Substitution("number"), 
             new FixedText("times every year. There are eight other planets in our solar system. They are named"),
-            new Substitution("another first name"),
+            new Substitution("first name"),
             new FixedText(", "),
-            new Substitution("another first name"),
+            new Substitution("first name"),
             new FixedText(", "),
-            new Substitution("another first name"),
+            new Substitution("first name"),
             new FixedText(", "),
-            new Substitution("another first name"),
+            new Substitution("first name"),
             new FixedText(", "),
-            new Substitution("another first name"),
+            new Substitution("first name"),
             new FixedText(", "),
-            new Substitution("another first name"),
+            new Substitution("first name"),
             new FixedText(", Jupiter, and Mars. Scientists who study these planets are called"),
             new Substitution("plural noun"),
             new FixedText("."))));
@@ -178,7 +180,7 @@ public class MadLibProgram {
         
 
         //creates SubstitutionsInput boxes
-        SubstitutionsInput substInput = new SubstitutionsInput(madLib1, canvas.getHeight()/3);
+        SubstitutionsInput substInput = new SubstitutionsInput(madLib2, canvas.getHeight()/4);
         canvas.add(substInput);
         substInput.setCenter(canvas.getCenter());
 

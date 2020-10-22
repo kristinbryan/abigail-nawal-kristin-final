@@ -29,4 +29,5 @@ public class SubstitutionsInput extends GraphicsGroup {
             y += totalHeight / 10;
         }
     }
+
 }
