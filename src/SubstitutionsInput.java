@@ -6,7 +6,6 @@ import edu.macalester.graphics.ui.TextField;
 /**
  * Represents a list of a certain number of TestFeilds with corresponding Textboxes that hold their values
  */
-//Mad Lib filler outer thing (rename something)
 public class SubstitutionsInput extends GraphicsGroup {
     /**
     * Constructs a group of TextFields and places them on a given canvas according to the number of elements declared
@@ -26,6 +25,8 @@ public class SubstitutionsInput extends GraphicsGroup {
             add(prompt);
 
             substitutionText.onChange(text -> substitution.setText(text));
+            
+            // onChange: set fill color of prompt depending on whether text is blank (use text.isBlank())
             y += totalHeight / 10;
         }
     }
