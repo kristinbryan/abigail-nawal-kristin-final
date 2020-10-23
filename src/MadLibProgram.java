@@ -2,6 +2,7 @@ import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.FontStyle;
 import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.ui.Button;
+import edu.macalester.graphics.GraphicsObject;
 
 public class MadLibProgram {
     private MadLib currentMadLib;
@@ -74,6 +75,7 @@ public class MadLibProgram {
         canvas.add(madLibName);
         completedMadLib.setText(currentMadLib.getText());
         completedMadLib.setCenter(canvas.getCenter());
+        completedMadLib.setWrappingWidth(300);
         canvas.add(completedMadLib);
         Button playAgain = new Button("PLAY AGAIN");
         playAgain.onClick(() -> {
