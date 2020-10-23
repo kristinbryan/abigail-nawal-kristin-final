@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+*  MadLib  holds a list of MadLibElements (a given mix of Substitutions and Fixed Test )and a title 
+* that can be manipulated using substitutions
+*/
 public class MadLib {
     private String title;
     private List<MadLibElement> elements;
@@ -42,22 +46,6 @@ public class MadLib {
             }
         }
         return listOfSubstitutions;
-    }
-
-    public static void main(String[] args) {
-        MadLib test = new MadLib("hello", List.of(
-            new FixedText("A vacation is when you take a trip to some"),
-            new Substitution("adjective"),
-            new FixedText("place with your"),
-            new Substitution("adjective"),
-            new FixedText("family. Usually you go to some place that is near a/an"),
-            new Substitution("noun"), 
-            new FixedText("or up on a/an"), 
-            new Substitution("noun"), 
-            new FixedText(". A good vacation place is one where you can ride"), 
-            new Substitution("plural noun")));
-
-            System.out.println(test.getText());
     }
 
 }

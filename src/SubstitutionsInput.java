@@ -3,9 +3,6 @@ import edu.macalester.graphics.GraphicsGroup;
 import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.ui.TextField;
 
-import java.awt.Color;
-import java.awt.color.*;
-
 /**
  * Represents a list of a certain number of TestFeilds with corresponding Textboxes that hold their values
  */
@@ -28,10 +25,7 @@ public class SubstitutionsInput extends GraphicsGroup {
             add(prompt);
 
             substitutionText.onChange(text -> substitution.setText(text));
-            // if (text = null) {
-            //     substitutionText.setBackground(Color.RED);
-            // }
-            // onChange: set fill color of prompt depending on whether text is blank (use text.isBlank())
+            
             y += totalHeight / 10;
         }
     }
