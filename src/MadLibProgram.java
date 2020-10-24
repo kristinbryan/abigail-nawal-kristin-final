@@ -72,8 +72,8 @@ public class MadLibProgram {
         madLibName.setCenter(canvas.getWidth() * 0.5, canvas.getHeight() * 0.05);
         canvas.add(madLibName);
         completedMadLib.setText(currentMadLib.getText());
-        completedMadLib.setCenter(canvas.getCenter());
         completedMadLib.setWrappingWidth(300);
+        completedMadLib.setCenter(canvas.getCenter());
         canvas.add(completedMadLib);
         Button playAgain = new Button("PLAY AGAIN");
         playAgain.onClick(() -> {
